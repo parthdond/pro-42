@@ -106,7 +106,7 @@ class Game{
                  }
                  
                   if (player.index !== null) {
-                     //fill code here, to destroy the objects.
+                     
                      for(var i=0 ;i<fruitGroup.length; i++){
 
                      if (fruitGroup.get(i).isTouching(players)){
@@ -120,16 +120,18 @@ class Game{
 
                      }
                   }
-                
-
-         
-         
+                  if(player.score>=10){
+                      this.end()
+                  }
         
-         
-
     }
 
     end(){
+        game.update(2);
+        clear();
+        fill("blue");
+        textSize(40);
+        text("Game Over ",350,300);
        console.log("Game Ended");
     }
 }
